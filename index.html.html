@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Intro to map components - Create a 2D map | Sample | ArcGIS Maps SDK for JavaScript</title>
+
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+    </style>
+    <!-- Load Calcite components from CDN -->
+    <script type="module" src="https://js.arcgis.com/calcite-components/3.3.3/calcite.esm.js"></script>
+
+    <!-- Load the ArcGIS Maps SDK for JavaScript from CDN -->
+    <script src="https://js.arcgis.com/4.34/"></script>
+
+    <!-- Load Map components from CDN-->
+    <script type="module" src="https://js.arcgis.com/4.34/map-components/"></script>
+  </head>
+
+  <body>
+ <arcgis-map basemap="topo-vector" zoom="11" center="-79.70, 43.47">
+  <arcgis-zoom slot="top-left"></arcgis-zoom>
+  <arcgis-home slot="top-left"></arcgis-home>
+
+  <arcgis-search slot="top-right"></arcgis-search>
+  <arcgis-basemap-gallery slot="top-right"></arcgis-basemap-gallery>
+  <arcgis-measurement slot="top-right"></arcgis-measurement>
+
+  <arcgis-scale-bar slot="bottom-left"></arcgis-scale-bar>
+  <arcgis-sketch slot="top-right"></arcgis-sketch>
+</arcgis-map>
+    <script type="module">
+      // Get a reference to the map component
+      const viewElement = document.querySelector("arcgis-map");
+
+      // Wait for when the component is ready
+      await viewElement.viewOnReady();
+      console.log("Map component is ready", event);
+    </script>
+  </body>
+</html>
